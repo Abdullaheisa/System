@@ -1,0 +1,135 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    background-color: rgb(47, 47, 47);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+.solar-system ul li a {
+    text-decoration: none;
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(38, 52, 246);
+    box-shadow: 0px -1px 10px 2px rgba(38, 52, 246, 30%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    position: relative;
+    transition: .5s ;
+    z-index: 100;
+}
+.solar-system li::before {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: -120px;
+    transform: translate(-50% , -50%);
+    font-size: 60px;
+    letter-spacing: 100px;
+    opacity: 0;
+    transition: .5s;
+}
+.solar-system li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 150px;
+    transform: translatey(-50%);
+    background-color: aliceblue;
+    width: 180px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s;
+}
+.solar-system ul:hover {
+    overflow: unset;
+}
+.solar-system ul:hover li a {
+    opacity: .1;
+}
+.solar-system ul li a:hover {
+    background-color: blueviolet;
+    width: 120px;
+    transform: scale(1.3);
+    opacity: 1;
+
+}
+.solar-system ul li:hover::before {
+    opacity: 1;
+    letter-spacing: 1px;
+}
+.solar-system ul li:hover::after {
+    opacity: 1;
+    width: 120px;
+}
+@media (max-width:767px) {
+    .solar-system ul li:hover::after {
+        width: 60px;
+        height: 60px;
+        left: 135px;
+    }
+}
+@media (max-width:767px) {
+    .solar-system ul li:hover::before {
+        font-size: 30px;
+        left: -60px;
+    }
+}
+/* ============================================================Sun===================================================================== */
+.solar-system .sun::before {
+    content: "Sun";
+}
+/* ==========================================================Mercury=================================================================== */
+.solar-system .mercury::before {
+    content: "mercury";
+}
+/* ===========================================================venus===================================================================== */
+.solar-system .venus::before {
+    content: "venus";
+}
+/* =============================================================earth================================================================== */
+.solar-system .earth::before {
+    content: "earth";
+}
+/* ==================================================================================================================================== */
+.solar-system .jupiter::before {
+    content: "jupiter";
+}
+/* ==================================================================================================================================== */
+.solar-system .saturn::before {
+    content: "saturn";
+}
+/* ==================================================================================================================================== */
+.solar-system .uranus::before {
+    content: "uranus";
+}
+/* ==================================================================================================================================== */
+.solar-system .neptune::before {
+    content: "neptune";
+}
